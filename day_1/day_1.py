@@ -13,8 +13,6 @@ def depth_windows(depths: list[int], k: int = 3) -> int:
 
 if __name__ == "__main__":
     with open("day_1/inputs/depths.txt") as f:
-        lines = f.readlines()
-        depths = [int(line.strip()) for line in lines]
+        depths = [int(line.strip()) for line in f.readlines()]
 
-    test_vals = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263]
     print(depth_windows(depths))
