@@ -1,13 +1,14 @@
 def crabs(positions: list[int]) -> int:
     biggest = max(positions)
     smallest = min(positions)
-    options = []
+    winner = float("inf")
     for i in range(smallest, biggest):
         fuel = 0
         for pos in positions:
             fuel += abs(pos - i)
-        options.append(fuel)
-    return min(options)
+        if fuel < winner:
+            winner = fuel
+    return winner
 
 
 test_positions = [
@@ -1012,4 +1013,4 @@ test_positions = [
     627,
     1379,
 ]
-crabs(test_positions)
+print(crabs(test_positions))
